@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wsei_lab4.Controller">
+   <children>
+      <Button fx:id="obliczKoszt" layoutX="22.0" layoutY="546.0" mnemonicParsing="false" onAction="#oblicz" text="Oblicz koszt" />
+      <LineChart fx:id="lineChart" layoutX="187.0" layoutY="23.0">
+        <xAxis>
+          <CategoryAxis fx:id="categoryAxis" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="numberAxis" side="LEFT" upperBound="190.0" />
+        </yAxis>
+      </LineChart>
+      <Slider fx:id="amplitudeSlider" blockIncrement="1.0" layoutX="20.0" layoutY="66.0" majorTickUnit="1.0" max="5.0" min="1.0" onMouseReleased="#suwakChanged" showTickLabels="true" />
+      <Slider fx:id="freqSlider" blockIncrement="1.0" layoutX="20.0" layoutY="123.0" majorTickUnit="1.0" max="5.0" min="1.0" onMouseReleased="#suwakChanged" showTickLabels="true" />
+      <Slider fx:id="phaseSlider" blockIncrement="30.0" layoutX="20.0" layoutY="179.0" majorTickUnit="30.0" max="180.0" min="-180.0" minorTickCount="15" onMouseReleased="#suwakChanged" showTickLabels="true" />
+      <Slider fx:id="offsetSlider" layoutX="20.0" layoutY="234.0" min="-100.0" minorTickCount="5" onMouseReleased="#suwakChanged" showTickLabels="true" />
+      <Label layoutX="20.0" layoutY="46.0" text="Amplitude" />
+      <Label layoutX="20.0" layoutY="103.0" text="Frequency" />
+      <Label layoutX="20.0" layoutY="212.0" text="Offset" />
+      <Label layoutX="20.0" layoutY="159.0" text="Phase" />
+      <Label layoutX="20.0" layoutY="454.0" text="Promień walca [m]" />
+      <Label layoutX="20.0" layoutY="485.0" text="Wysokość walca [m]" />
+      <TextField fx:id="promienWalca" layoutX="144.0" layoutY="449.0" prefHeight="26.0" prefWidth="52.0" text="1" />
+      <TextField fx:id="wysokoscWalca" layoutX="144.0" layoutY="480.0" prefHeight="26.0" prefWidth="52.0" text="1" />
+      <Label layoutX="18.0" layoutY="588.0" prefHeight="18.0" prefWidth="86.0" text="Ciężar walca" />
+      <Label layoutX="20.0" layoutY="517.0" text="Grubość blachy [mm]" />
+      <TextField fx:id="gruboscBlachy" layoutX="144.0" layoutY="512.0" prefHeight="26.0" prefWidth="52.0" text="1" />
+      <Label layoutX="216.0" layoutY="454.0" prefHeight="18.0" prefWidth="254.0" text="Cena blachy stalowej [PLN za 1mm/1m^2]" />
+      <TextField fx:id="cenaBlachyStalowej" layoutX="483.0" layoutY="450.0" prefHeight="26.0" prefWidth="52.0" text="70" />
+      <Label layoutX="216.0" layoutY="485.0" prefHeight="18.0" prefWidth="254.0" text="Cena blachy nierdzewnej [PLN za 1mm/1m^2]" />
+      <TextField fx:id="cenaBlachyNierdzewnej" layoutX="483.0" layoutY="481.0" prefHeight="26.0" prefWidth="52.0" text="210" />
+      <Label fx:id="ciezarWalca" layoutX="208.0" layoutY="588.0" prefHeight="18.0" prefWidth="86.0" />
+      <Label layoutX="18.0" layoutY="615.0" prefHeight="18.0" prefWidth="180.0" text="Koszt walca z blachy stalowej" />
+      <Label fx:id="kosztStalowa" layoutX="208.0" layoutY="615.0" prefHeight="18.0" prefWidth="86.0" />
+      <Label layoutX="18.0" layoutY="643.0" prefHeight="18.0" prefWidth="180.0" text="Koszt walca z blachy nierdzewnej" />
+      <Label layoutX="216.0" layoutY="516.0" prefHeight="18.0" prefWidth="254.0" text="Waga blachy [kg za 1mm/1m^2]" />
+      <Label fx:id="kosztNierdzewna" layoutX="208.0" layoutY="643.0" prefHeight="18.0" prefWidth="86.0" />
+      <TextField fx:id="wagaBlachy" layoutX="483.0" layoutY="512.0" prefHeight="26.0" prefWidth="52.0" text="8" />
+   </children>
+</AnchorPane>
